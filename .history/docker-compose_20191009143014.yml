@@ -1,0 +1,27 @@
+version: '3.6'
+
+services:
+  app:
+    build: .
+    working_dir: /app
+    volumes:
+      - '.:/app'
+      - '~/.m2:/root/.m2'
+    ports:
+      - '8083:8080'
+    command: mvn clean spring-boot:run
+#    depends_on:
+#      - h2-db
+
+#  h2-db:
+#    container_name: 'h2-db'
+#    hostname: 'h2-db'
+#    image: 1000kit/h2
+#    ports:
+#      - "8181:8181"
+#      - "1521:1521"
+#    volumes:
+#      - h2-data:/opt/h2-data
+volumes:
+     h2-data:
+      driver: local
