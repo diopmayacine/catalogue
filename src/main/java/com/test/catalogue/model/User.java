@@ -8,14 +8,14 @@ import javax.persistence.Id;
 @Entity
 public class User {
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-	private String username;
-	private String password;
+	private String name;
 
 	public User(String name) {
 		this.name = name;
 	}
+
 
 	@Override
     public String toString() {
