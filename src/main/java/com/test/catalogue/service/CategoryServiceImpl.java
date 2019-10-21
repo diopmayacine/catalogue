@@ -1,34 +1,40 @@
 package com.test.catalogue.service;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
 import com.test.catalogue.exception.ResourceNotFoundException;
 import com.test.catalogue.model.Category;
 import com.test.catalogue.repository.CategoryRepository;
 
+@Service
+@Transactional
 public class CategoryServiceImpl implements CategoryService {
 	
-	private CategoryRepository categoeryRepository;
+	private CategoryRepository categoryRepository;
 	
 	public CategoryServiceImpl(CategoryRepository categoryRepo) {
-		this.categoeryRepository = categoryRepo;
+		this.categoryRepository = categoryRepo;
 	}
 
 	@Override
 	public Iterable<Category> getAllCategory() {
 		// TODO Auto-generated method stub
-		return categoeryRepository.findAll();
+		return categoryRepository.findAll();
 	}
 
 	@Override
 	public Category getCategory(long id) {
 		// TODO Auto-generated method stub
-		return categoeryRepository.findById(id)
+		return categoryRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Category not Found"));
 	}
 
 	@Override
-	public Category saveCategory(Category category) {
+	public Category save(Category category) {
 		// TODO Auto-generated method stub
-		return categoeryRepository.save(category);
+		return categoryRepository.save(category);
 	}
 
 }

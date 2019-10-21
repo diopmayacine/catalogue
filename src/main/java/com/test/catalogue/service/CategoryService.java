@@ -6,5 +6,5 @@ public interface CategoryService {
 
 	Iterable<Category> getAllCategory();
 	Category getCategory(long id);
-	Category saveCategory(Category category);
+	Category save(Category category);
 }

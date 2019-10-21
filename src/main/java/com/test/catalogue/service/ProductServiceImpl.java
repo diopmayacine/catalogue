@@ -27,7 +27,8 @@ public class ProductServiceImpl implements ProductService{
 	public Product getProduct(long id) {
 		// TODO Auto-generated method stub
 		return productRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Product not found."));
+		
 	}
 
 	@Override
