@@ -1,7 +1,10 @@
 package com.test.catalogue;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class CatalogueApplication {
@@ -10,4 +13,8 @@ public class CatalogueApplication {
 		SpringApplication.run(CatalogueApplication.class, args);
 	}
 
+	@Bean	
+	public BCryptPasswordEncoder getBCEP() {
+		return new BCryptPasswordEncoder();
+	}
 }
