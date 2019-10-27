@@ -21,31 +21,31 @@
 ### login 
 
 Method: POST
-Url : http://localhost:8083/login
-Payload : {"username": "user","password": "passer"} or {"username": "admin","password": "1234"}
-
+Url : http://localhost:8083/login <br/>
+Payload : ```{"username": "user","password": "passer"}``` or ```{"username": "admin","password": "1234"}```
+<br/>
 get JWT token on Authorization headers response
-
+<br/>
 - Paste this token in all requests to get resources in Authorization headers
 Format: Bearer token
-
+<br/>
 Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiVVNFUiJ9XX0.7e9eZadRsVsBFVqyLmPBWVw4EMjJBK-LyXsS25TN47E
 
 ### Product Cataloge
 
-- Method: GET
+- Method: GET <br/>
 - Url: http://localhost:8083/api/products
 
 ### Product Detail
 
-- Method: GET
-- Url: http://localhost:8083/api/products/id
+- Method: GET <br/>
+- Url: http://localhost:8083/api/products/id 
 
 ### Add or Update Product to Bag
 
-- Method: POST
-- Url: http://localhost:8083/api/shopping-carts
-- payload example : {
+- Method: POST <br/>
+- Url: http://localhost:8083/api/shopping-carts <br/>
+- payload example : ```{
   "productOrders": [{
    "product": {
    	 "id": 1,
@@ -53,9 +53,9 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
     },
    "quantity": 3
   }]
-}
-
-- Response Example: {
+}```
+<br/>
+- Response Example: ```{
     "id": 1,
     "code": null,
     "status": "CREATED",
@@ -70,14 +70,14 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
     ],
     "numberOfProducts": 1,
     "totalOrderPrice": 26000.0
-}
+}```
 
 ### Show bag containt
 
-- Method: GET
+- Method: GET <br/>
 - URL: http://localhost:8083/api/shopping-carts/bag
-
-- Response Example: {
+<br/>
+- Response Example: ```{
     "id": 1,
     "code": null,
     "status": "CREATED",
@@ -98,7 +98,7 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
     ],
     "numberOfProducts": 2,
     "totalOrderPrice": 51000.0
-}
+}```
 
 
 ### Valided shopping cart (bag containt)
@@ -106,7 +106,7 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
 - Method: GET
 - URL: http://localhost:8083/api/shopping-carts/validate-bag
 
-- Response Example : {
+- Response Example : ```{
     "id": 1,
     "code": null,
     "status": "PAID",
@@ -121,12 +121,12 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
     ],
     "numberOfProducts": 1,
     "totalOrderPrice": 26000.0
-}
+}```
 
 ### Improvement in progress
 
-- Handle order ( link order and shopping-cart) transform validate shopping card to order
-- Add Jwt config in swagger for api documentation swagger link : http://localhost:8083/swagger-ui.html
-- Have better test coverage
-- Add front app for this api
+- Handle order ( link order and shopping-cart) transform validate shopping card to order <br/>
+- Add Jwt config in swagger for api documentation swagger link : http://localhost:8083/swagger-ui.html <br/>
+- Have better test coverage <br/>
+- Add front app for this api <br/>
 
