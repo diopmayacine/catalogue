@@ -6,7 +6,7 @@
 2. Cloner ce repo
 3. Construire l'app et lancer le serveur local: `docker-compose up`
 4. Aller regarder sur localhost:8083
-5. Installer Postman pour les 
+5. Installer Postman : [Postman](https://www.getpostman.com/downloads/)
 
 
 ## Access to H2 database
@@ -33,19 +33,19 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
 
 ### Product Cataloge
 
-Method: GET
-Url: http://localhost:8083/api/products
+- Method: GET
+- Url: http://localhost:8083/api/products
 
 ### Product Detail
 
-Method: GET
-Url: http://localhost:8083/api/products/id
+- Method: GET
+- Url: http://localhost:8083/api/products/id
 
 ### Add or Update Product to Bag
 
-Method: POST
-Url: http://localhost:8083/api/shopping-carts
-payload example : {
+- Method: POST
+- Url: http://localhost:8083/api/shopping-carts
+- payload example : {
   "productOrders": [{
    "product": {
    	 "id": 1,
@@ -55,7 +55,7 @@ payload example : {
   }]
 }
 
-Response Example: {
+- Response Example: {
     "id": 1,
     "code": null,
     "status": "CREATED",
@@ -74,10 +74,10 @@ Response Example: {
 
 ### Show bag containt
 
-Method: GET
-URL: http://localhost:8083/api/shopping-carts/bag
+- Method: GET
+- URL: http://localhost:8083/api/shopping-carts/bag
 
-Response Example: {
+- Response Example: {
     "id": 1,
     "code": null,
     "status": "CREATED",
@@ -103,10 +103,10 @@ Response Example: {
 
 ### Valided shopping cart (bag containt)
 
-Method: GET
-URL: http://localhost:8083/api/shopping-carts/validate-bag
+- Method: GET
+- URL: http://localhost:8083/api/shopping-carts/validate-bag
 
-Response Example : {
+- Response Example : {
     "id": 1,
     "code": null,
     "status": "PAID",
@@ -125,8 +125,8 @@ Response Example : {
 
 ### Improvement in progress
 
-Handle order ( link order and shopping-cart) transform validate shopping card to order
-Add Jwt config in swagger for api documentation swagger link : http://localhost:8083/swagger-ui.html
-Have better test coverage
-Add front app for this api 
+- Handle order ( link order and shopping-cart) transform validate shopping card to order
+- Add Jwt config in swagger for api documentation swagger link : http://localhost:8083/swagger-ui.html
+- Have better test coverage
+- Add front app for this api
 
