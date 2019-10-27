@@ -7,5 +7,6 @@ public interface ShoppingCartService {
 	public Iterable<ShoppingCart> getAll();
 	public ShoppingCart create(ShoppingCart shoppingCart);
 	public void update(ShoppingCart shoppingCart);
+	public ShoppingCart getUserShoppingCart(String username);
 
 }

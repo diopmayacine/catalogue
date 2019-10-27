@@ -64,4 +64,19 @@ public class CatalogueApplicationTests {
    		assertEquals("Produit 1",productService.getProduct(1L).getName());
 	}
 	
+	@Test
+	public void testAddProductToShoppingCart() {
+		Product p = new Product();
+   		p.setName("Produit 1");
+   		p.setDescription("Produit 1");
+   		p.setPictureUrl("http://placehold.it/200x100");
+   		p.setPrice(3000.0);
+   		
+   		Optional<Product> product = Optional.ofNullable(p);
+   		Mockito.when(productRepository.findById(1L)).thenReturn(product);
+   		
+   		
+   		
+	}
+	
 }

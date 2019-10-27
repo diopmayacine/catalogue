@@ -10,4 +10,6 @@ import com.test.catalogue.model.ShoppingProduct;
 @Validated
 public interface ShoppingProductService {
 	ShoppingProduct create(@NotNull(message = "The products for Shopping cart cannot be null.") @Valid ShoppingProduct shoppingProduct);
+	
+	public void delete(@NotNull(message = "The products for Shopping cart cannot be null.") @Valid ShoppingProduct shoppingProduct);
 }

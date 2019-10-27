@@ -1,6 +1,6 @@
 package com.test.catalogue.model;
 
-import java.beans.Transient;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -36,6 +37,8 @@ public class ShoppingCart implements Serializable{
 	String code;
 	
 	String status;
+
+	String username;
 	
 	@JsonManagedReference
     @OneToMany(mappedBy = "pk.shoppingCart")

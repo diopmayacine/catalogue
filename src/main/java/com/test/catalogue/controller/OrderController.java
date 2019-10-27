@@ -21,6 +21,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.test.catalogue.model.Order;
 import com.test.catalogue.model.OrderStatus;
 import com.test.catalogue.model.OrderProduct;
+import com.test.catalogue.dto.OrderForm;
 import com.test.catalogue.dto.OrderProductDto;
 import com.test.catalogue.exception.ResourceNotFoundException;
 import com.test.catalogue.service.OrderProductService;
@@ -68,7 +69,7 @@ public class OrderController {
 
         String uri = ServletUriComponentsBuilder
           .fromCurrentServletMapping()
-          .path("/orders/{id}")
+          .path("/api/orders/{id}")
           .buildAndExpand(order.getId())
           .toString();
         HttpHeaders headers = new HttpHeaders();
@@ -90,21 +91,4 @@ public class OrderController {
         }
     }
 
-    public static class OrderForm implements Serializable{
-
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = -3514277934340002400L;
-		
-		private List<OrderProductDto> productOrders;
-
-        public List<OrderProductDto> getProductOrders() {
-            return productOrders;
-        }
-
-        public void setProductOrders(List<OrderProductDto> productOrders) {
-            this.productOrders = productOrders;
-        }
-    }
 }

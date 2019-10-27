@@ -1,11 +1,12 @@
 package com.test.catalogue.model;
 
-import java.beans.Transient;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,13 +21,14 @@ public class ShoppingProduct implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
+     @JsonIgnore
 	 @EmbeddedId
-	 @JsonIgnore
 	 private ShpopingCartProductPK pk;
 	 
 	 @Column(nullable = false)
 	 private Integer quantity;
+	 
 	 
 	 // default constructor
 	 
@@ -37,9 +39,20 @@ public class ShoppingProduct implements Serializable{
 	     this.quantity = quantity;
 	 }
 	 
+	 
+	 @JsonIgnore
 	 @Transient
 	 public Product getProduct() {
 		 return this.pk.getProduct();
+	 }
+	 @Transient
+	 public String getProductName() {
+		 return getProduct().getName();
+	 }
+	 
+	 @Transient
+	 public Long getProductId() {
+		 return getProduct().getId();
 	 }
 	 
 	 @Transient

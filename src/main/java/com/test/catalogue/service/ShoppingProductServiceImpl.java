@@ -23,4 +23,11 @@ public class ShoppingProductServiceImpl implements ShoppingProductService{
 		return this.shoppingProductRepository.save(shoppingProduct);
 	}
 
+	@Override
+	public void delete(ShoppingProduct shoppingProduct) {
+		// TODO Auto-generated method stub
+		
+		this.shoppingProductRepository.delete(shoppingProduct);
+	}
+
 }

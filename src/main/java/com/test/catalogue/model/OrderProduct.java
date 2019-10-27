@@ -1,11 +1,12 @@
 package com.test.catalogue.model;
 
-import java.beans.Transient;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

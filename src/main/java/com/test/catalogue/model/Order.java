@@ -1,6 +1,6 @@
 package com.test.catalogue.model;
 
-import java.beans.Transient;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,6 +37,8 @@ public class Order implements Serializable{
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dateCreated;
+	
+	private String username;
 	
 	private String status;
 	
