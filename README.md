@@ -123,7 +123,7 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
     "totalOrderPrice": 26000.0
 }```
 
-### Improvement in progress
+### Improvements in progress
 
 - Handle order ( link order and shopping-cart) transform validate shopping card to order <br/>
 - Add Jwt config in swagger for api documentation swagger link : http://localhost:8083/swagger-ui.html <br/>
