@@ -1,6 +1,6 @@
 package com.test.catalogue.service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.stereotype.Service;
 
@@ -9,11 +9,11 @@ import com.test.catalogue.repository.ShoppingCartRepository;
 
 @Service
 @Transactional
-public class ShoppingCartServiceImpl2 implements ShoppingCartService {
+public class ShoppingCartServiceImpl implements ShoppingCartService {
 
 	private ShoppingCartRepository shoppingCartRepository;
 	
-	public ShoppingCartServiceImpl2(ShoppingCartRepository shoppingCartRepo) {
+	public ShoppingCartServiceImpl(ShoppingCartRepository shoppingCartRepo) {
 		this.shoppingCartRepository = shoppingCartRepo;
 	}
 	@Override

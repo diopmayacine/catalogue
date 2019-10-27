@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.test.catalogue.model.Category;
 import com.test.catalogue.service.CategoryService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
+
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {
@@ -18,6 +21,8 @@ public class CategoryController {
 		this.categoryService = categoryServ;
 	}
 	
+	@ApiOperation(value = "lists categories", response = Category.class,
+	        authorizations = { @Authorization(value = "Bearer ") })
 	@GetMapping(value = { "", "/" })
 	public Iterable<Category> index(){
 		return categoryService.getAllCategory();

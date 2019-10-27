@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,6 +28,7 @@ public class AppUser implements Serializable{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 	private String username;
+
 	private String password;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

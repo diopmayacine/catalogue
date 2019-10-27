@@ -1,6 +1,6 @@
 package com.test.catalogue.service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.stereotype.Service;
 
