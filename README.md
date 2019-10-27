@@ -41,7 +41,7 @@ Example : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTczMDU1NjE4LC
 - Method: GET <br/>
 - Url: http://localhost:8083/api/products/id 
 
-### Add or Update Product to Bag
+### Add or Update Product in Bag
 
 - Method: POST <br/>
 - Url: http://localhost:8083/api/shopping-carts <br/>
